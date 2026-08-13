@@ -37,7 +37,9 @@ app.get('/', (req, res) => {
             const checkoutButton = document.getElementById('checkout-button');
             if (checkoutButton) {
               checkoutButton.addEventListener('click', () => {
-                throw new Error('Checkout button intentionally broken for the Checkly demo');
+                const confirmation = document.createElement('p');
+                confirmation.textContent = 'Checkout started successfully.';
+                document.body.appendChild(confirmation);
               });
             }
           });
