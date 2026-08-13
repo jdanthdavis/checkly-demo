@@ -6,3 +6,11 @@ services:
     buildCommand: npm install
     startCommand: npm start
     autoDeploy: true
+
+  - type: web
+    name: checkly-demo-heartbeat-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run start:heartbeat
+    autoDeploy: true

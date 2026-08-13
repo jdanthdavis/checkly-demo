@@ -6,6 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "start:heartbeat": "node heartbeat-api.js",
     "test": "playwright test"
   },
   "dependencies": {
