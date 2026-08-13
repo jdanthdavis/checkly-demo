@@ -15,6 +15,14 @@ jobs:
       CHECKLY_ACCOUNT_ID: ${{ secrets.CHECKLY_ACCOUNT_ID }}
 
     steps:
+      - name: Validate Checkly secrets
+        run: |
+          if [ -z "$CHECKLY_API_KEY" ] || [ -z "$CHECKLY_ACCOUNT_ID" ]; then
+            echo "Missing Checkly secrets in GitHub Actions."
+            echo "Add CHECKLY_API_KEY and CHECKLY_ACCOUNT_ID under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
       - name: Checkout repository
         uses: actions/checkout@v4
 

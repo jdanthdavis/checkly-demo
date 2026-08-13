@@ -6,5 +6,5 @@ new HeartbeatMonitor('astronomy-heartbeat', {
   period: 1,
   periodUnit: 'minutes',
   grace: 5,
-  graceUnit: 'minutes',
+  graceUnit: 'seconds',
 })
