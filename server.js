@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
           <h1>Astronomy Shop</h1>
           <p>Explore the stars with premium gear for your next adventure.</p>
           <input type="text" value="Moon telescope" aria-label="search" style="padding: 10px; width: 220px; margin-right: 8px;" />
-          <button>Add to cart</button>
+          <button id="checkout-button">Proceed to checkout</button>
           <div style="margin-top: 20px;">
             <h2>Featured products</h2>
             <ul>
@@ -31,6 +31,17 @@ app.get('/', (req, res) => {
             </ul>
           </div>
         </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const checkoutButton = document.getElementById('checkout-button');
+            if (checkoutButton) {
+              checkoutButton.addEventListener('click', () => {
+                throw new Error('Checkout button intentionally broken for the Checkly demo');
+              });
+            }
+          });
+        </script>
       </body>
     </html>
   `);

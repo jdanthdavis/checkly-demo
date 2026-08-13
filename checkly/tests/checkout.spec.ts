@@ -1,19 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-test('Astronomy Shop checkout flow works for a customer', async ({ page }) => {
+test('Checkout button intentionally throws a browser JavaScript error for the Checkly demo', async ({ page }) => {
+  const pageErrors: string[] = [];
+  page.on('pageerror', (error) => {
+    pageErrors.push(error.message);
+  });
+
   await page.goto('/');
+  await page.locator('#checkout-button').click();
 
-  await page.locator('body').click();
-
-  const productLink = page.locator('a, button').filter({ hasText: /product|shop|catalog/i }).first();
-  if (await productLink.count()) {
-    await productLink.click();
-  }
-
-  const addToCartButton = page.locator('button, a').filter({ hasText: /add to cart/i }).first();
-  if (await addToCartButton.count()) {
-    await addToCartButton.click();
-  }
-
-  await expect(page.locator('body')).toContainText(/cart|checkout|order/i);
+  await expect(pageErrors).toContain('Checkout button intentionally broken for the Checkly demo');
 });
