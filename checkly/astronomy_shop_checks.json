@@ -1,0 +1,45 @@
+{
+  "project": "astronomy-shop-checkly-mvp",
+  "description": "Minimal Checkly MVP for the OpenTelemetry Astronomy Shop demo focused on customer-critical journeys.",
+  "checks": [
+    {
+      "name": "Astronomy Shop – Storefront Loads",
+      "type": "browser",
+      "frequency": 5,
+      "regions": ["us-east-1"],
+      "url": "http://localhost:8080",
+      "checkType": "browser",
+      "playwrightScript": "home-page-load",
+      "purpose": "Validate that the storefront loads and renders key customer-facing content."
+    },
+    {
+      "name": "Astronomy Shop – Product Search & Browse",
+      "type": "browser",
+      "frequency": 10,
+      "regions": ["us-east-1"],
+      "url": "http://localhost:8080",
+      "checkType": "browser",
+      "playwrightScript": "product-search-or-browse",
+      "purpose": "Validate that customers can find and browse a product."
+    },
+    {
+      "name": "Astronomy Shop – Checkout Conversion Path",
+      "type": "browser",
+      "frequency": 15,
+      "regions": ["us-east-1"],
+      "url": "http://localhost:8080",
+      "checkType": "browser",
+      "playwrightScript": "add-to-cart-and-checkout",
+      "purpose": "Validate the highest-value revenue path through add-to-cart and checkout."
+    },
+    {
+      "name": "Astronomy Shop – Catalog API Health",
+      "type": "api",
+      "frequency": 5,
+      "regions": ["us-east-1"],
+      "method": "GET",
+      "url": "http://localhost:8080/api/products",
+      "purpose": "Confirm the catalog backend remains healthy from the API layer."
+    }
+  ]
+}

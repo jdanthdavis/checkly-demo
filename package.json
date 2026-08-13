@@ -1,0 +1,18 @@
+{
+  "name": "checkly-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A runnable e-commerce demo for the Checkly challenge",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "checkly": "latest"
+  }
+}
