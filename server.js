@@ -37,9 +37,7 @@ app.get('/', (req, res) => {
             const checkoutButton = document.getElementById('checkout-button');
             if (checkoutButton) {
               checkoutButton.addEventListener('click', () => {
-                const confirmation = document.createElement('p');
-                confirmation.textContent = 'Order confirmed. Thank you!';
-                document.body.appendChild(confirmation);
+                throw new Error('Checkout button intentionally broken for the demo');
               });
             }
           });
