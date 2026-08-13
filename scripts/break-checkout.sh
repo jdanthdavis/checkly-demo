@@ -23,7 +23,7 @@ old = """          document.addEventListener('DOMContentLoaded', () => {
             if (checkoutButton) {
               checkoutButton.addEventListener('click', () => {
                 const confirmation = document.createElement('p');
-                confirmation.textContent = 'Checkout started successfully.';
+                confirmation.textContent = 'Order confirmed. Thank you!';
                 document.body.appendChild(confirmation);
               });
             }
